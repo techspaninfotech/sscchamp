@@ -1,150 +1,47 @@
+<!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8"></meta>
-    <meta content="width=device-width, initial-scale=1.0" name="viewport"></meta>
-    <title>SSC Poly Cricket Scoreboard</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>404 Not Found</title>
     <style>
-        table {
-            width: 100%;
-            border-collapse: collapse;
-            margin: 20px 0;
-            font-size: 12px; /* Minimized font size */
-            text-align: left;
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f0f0f0;
+            margin: 0;
+            font-family: Arial, sans-serif;
+            color: #333;
         }
-        th, td {
-            padding: 8px;
-            border: 1px solid #ddd;
+        .container {
+            text-align: center;
         }
-        th {
-            background-color: #007bff;
-            color: white;
+        h1 {
+            font-size: 4rem;
+            margin-bottom: 0.5rem;
         }
-        .header-row {
-            font-weight: bold;
-            background-color: #f2f2f2;
-            padding: 10px;
-            border-bottom: 2px solid #ddd;
+        p {
+            font-size: 1.5rem;
+            margin: 0;
         }
-        .continuous-line {
-            font-size: 14px;
-            font-weight: bold;
-            margin: 10px 0;
-            padding: 10px;
-            background-color: #e9ecef;
-            border-radius: 5px;
+        a {
+            color: #007bff;
+            text-decoration: none;
+            margin-top: 1rem;
+            display: inline-block;
         }
-        .special-line {
-            font-size: 16px; /* Increased font size */
-            font-weight: bold;
-            margin: 10px 0;
-            padding: 10px;
-            background-color: #e9ecef;
-            border-radius: 5px;
+        a:hover {
+            text-decoration: underline;
         }
     </style>
 </head>
 <body>
-    <h2>SSC Poly Cricket Scoreboard</h2>
-    <div id="header"></div>
-    <div id="continuousLine"></div>
-    <div id="additionalLines"></div>
-    <table id="scoreTable">
-        <tbody></tbody>
-    </table>
-
-    <script>
-        const scriptURL = "https://script.google.com/macros/s/AKfycbx-Ado3g4PA7l2EZ3n0ecGyAyw7hy8K-z1yT96X0gKWCdrZrQfpG02JXN7P5r68rxuQDg/exec";
-
-        async function fetchScoreboard() {
-            try {
-                const response = await fetch(scriptURL);
-                const data = await response.json();
-                const headerDiv = document.getElementById("header");
-                const continuousLineDiv = document.getElementById("continuousLine");
-                const additionalLinesDiv = document.getElementById("additionalLines");
-                const tableBody = document.querySelector("#scoreTable tbody");
-
-                // Clear previous data
-                headerDiv.innerHTML = "";
-                continuousLineDiv.innerHTML = "";
-                additionalLinesDiv.innerHTML = "";
-                tableBody.innerHTML = "";
-
-                // Display A1, A2, and A3 at the top
-                const headerRow1 = document.createElement("div");
-                headerRow1.className = "header-row";
-                headerRow1.textContent = data[0][0]; // A1
-                headerDiv.appendChild(headerRow1);
-
-                const headerRow2 = document.createElement("div");
-                headerRow2.className = "header-row";
-                headerRow2.textContent = data[1][0]; // A2
-                headerDiv.appendChild(headerRow2);
-
-                const headerRow3 = document.createElement("div");
-                headerRow3.className = "header-row";
-                headerRow3.textContent = data[2][0]; // A3
-                headerDiv.appendChild(headerRow3);
-
-                // Display A4 and B4 as a continuous straight line
-                const continuousLine = document.createElement("div");
-                continuousLine.className = "continuous-line";
-                continuousLine.textContent = `${data[3][0]} ${data[3][1]}`; // A4 and B4
-                continuousLineDiv.appendChild(continuousLine);
-
-                // Display A6 to F6 as a special formatted line
-                const lineA6toF6 = document.createElement("div");
-                lineA6toF6.className = "special-line";
-                lineA6toF6.innerHTML = `
-                    ${data[5][0]} <!-- A6 -->
-                    ${data[5][1]} / <!-- B6 with oblique sign -->
-                    ${data[5][2]} <!-- C6 -->
-                    [${data[5][3]}] <!-- D6 in square brackets -->
-                    ${data[5][4]} <!-- E6 -->
-                    ${data[5][5]} <!-- F6 -->
-                `;
-                additionalLinesDiv.appendChild(lineA6toF6);
-
-                // Display A8 to F8 as a special formatted line
-                const lineA8toF8 = document.createElement("div");
-                lineA8toF8.className = "special-line";
-                lineA8toF8.innerHTML = `
-                    ${data[7][0]} <!-- A8 -->
-                    ${data[7][1]} / <!-- B8 with oblique sign -->
-                    ${data[7][2]} <!-- C8 -->
-                    [${data[7][3]}] <!-- D8 in square brackets -->
-                    ${data[7][4]} <!-- E8 -->
-                    ${data[7][5]} <!-- F8 -->
-                `;
-                additionalLinesDiv.appendChild(lineA8toF8);
-
-                // Display table from A11 to G90
-                for (let i = 10; i < data.length; i++) {
-                    const rowData = data[i];
-                    const row = document.createElement("tr");
-
-                    rowData.forEach(cell => {
-                        const cellElement = document.createElement("td");
-
-                        // Check if the value is a number and format it to 2 decimal places
-                        if (!isNaN(cell) && cell.toString().includes(".")) {
-                            cellElement.textContent = parseFloat(cell).toFixed(2);
-                        } else {
-                            cellElement.textContent = cell;
-                        }
-
-                        row.appendChild(cellElement);
-                    });
-
-                    tableBody.appendChild(row);
-                }
-            } catch (error) {
-                console.error("Error fetching data:", error);
-            }
-        }
-
-        fetchScoreboard(); // Initial fetch
-        setInterval(fetchScoreboard, 10000); // Fetch new data every 10 seconds
-    </script>
+    <div class="container">
+        <h1>404</h1>
+        <p>Oops! The page you're looking for doesn't exist.</p>
+        <a href="/">Go back to the homepage</a>
+    </div>
 </body>
 </html>
